@@ -1,2 +1,2 @@
 # WebX OS
-Boilerplate project with login and desktop UI.
+Windows Desktop clone for webpage.
