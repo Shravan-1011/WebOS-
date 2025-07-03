@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="overlay"></div>
+    
+    <div class="page1" >
+      
+    <div class="timebox">
+      <p class="time">16:56</p>
+      <p class="day">Monday, 27 June</p>
+    </div>
+
+    <div class="news">
+      <div class="weathernow">
+        <p class="cityn">Kolhapur</p>
+        <i class="fa-solid fa-cloud fa-2xl" style="color: #74C0FC;"></i>
+        <p class="temp">28°C</p>
+        <p class="weather">Partly Sunny</p>
+        <button class="wbtn">See full forecast</button>
+      </div>
+
+      <div class="n1">
+        <p class="headl">Daily Wonder</p>
+        <img src="assets/img/sea.jpg" class="imgs">
+        <p class="news1">Sea levels are rising at an alarming rate....</p>
+        <button class="n1btn">Watch more Video like this</button>
+      </div>
+
+      <div class="n2">
+        <p class="headl">Tony Stark Quiz</p>
+        <img src="assets/img/tony.avif" class="imgs">
+        <p class="news1">What was the name of Tony's Dad?</p>
+        <button class="n1btn">Take the quiz</button>
+      </div>
+
+      <div class="n3">
+        <p class="headl">Holy Temple</p>
+        <img src="assets/img/temple.jpeg" class="imgs">
+        <p class="news1">Celebrating the oldest and largest hindu chariot in puri</p>
+        <button class="n1btn">Explore more</button>
+      </div>
+    </div>
+  </div>
+
+
+  
+    <script> 
+   const transz = document.querySelector('.overlay');
+transz.addEventListener('click', function() {
+   document.body.classList.add('fade-out');
+  setTimeout(() => {
+    window.location.href = 'temp.html';
+  }, 100); 
+});
+
+      </script>
+</body>
+</html>

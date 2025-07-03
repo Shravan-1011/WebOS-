@@ -1,0 +1,367 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+.window {
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+  background: rgb(36, 35, 35);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  min-width: 800px;
+  min-height: 600px;
+  z-index: 20;
+  display: none;
+}
+
+.window.active {
+  display: block;
+}
+.window-header {
+  height: 42px;;
+            background: rgba(13, 12, 12, 0.8);
+            padding: 12px 16px;
+            border-bottom: 1px solid #585859;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px 8px 0 0;
+            cursor: move;
+        }
+
+         .window-title {
+          background-color:rgb(57, 56, 56) ;
+          position: absolute;
+          left: 3%;
+          height: 42px;
+          width: 25%;
+          padding-left: 5px;
+          border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: default;
+        }
+        .window-controls{
+    position: absolute;
+    right: 1%; /* Changed from 0% */
+    display: flex;
+    gap: 4px;
+    height: 42px;
+    width: 130px;
+}
+
+        
+        .window-control{
+          display: flex;
+          height: 32px;
+          width: 32px;
+          border: none;
+          /* border-radius:4px; */
+           align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            color: white;
+
+        }
+        .close{
+          position: absolute;
+          left: 90px;
+          top: 5px;
+          background-color: transparent;
+
+        }
+        .close:hover{
+          background-color: red;
+        }
+        .maximize{
+          position: absolute;
+          left: 58px;
+          top: 5px;
+          background-color: transparent;
+        }
+        .maximize:hover{
+          background-color: rgb(62, 60, 60);
+        }
+        .minimize{
+          position: absolute;
+          left: 26px;
+          top: 5px;
+          background-color: transparent;
+        }
+        .minimize:hover{
+          background-color: rgb(62, 60, 60);
+        }
+
+
+        .window-toolbar {
+          height: 47.2px;
+            background: rgb(57, 56, 56);
+            padding: 8px 16px;
+            border-bottom: 1px solid #585859;
+            
+            gap: 0px;
+        }
+
+        .toolbar-button {
+          position: absolute;
+          top: 8%;
+
+            background: none;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .toolbar-button:hover {
+            background: rgb(99, 97, 97);
+            
+        }
+
+        .address-bar {
+          position: absolute;
+          top: 8%;
+          left: 230px;
+          width: 60%;
+            flex: 1;
+            background: rgb(82, 80, 80);
+            border: 1px solid #ced4da;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        
+        .forwards{
+          
+          left: 80px;
+        }
+        .ups{
+
+          left: 170px;
+        }
+        .searchs{
+          left: 710px;
+        }
+
+
+
+         .window-content {
+            padding: 16px;
+            height: calc(100% - 120px);
+            overflow-y: auto;
+        }
+
+        .drives-section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .drives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .drive-item {
+            background: transparent;
+            
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .drive-item:hover {
+            background: rgb(62, 60, 60);
+            
+        }
+
+        .drive-icon {
+            width: 48px;
+            height: 48px;
+            background: #0066cc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .drive-info {
+            flex: 1;
+        }
+
+        .drive-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .drive-details {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e9ecef;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #0066cc;
+            transition: width 0.3s;
+        }
+
+
+        /* Media query for fullscreen/maximized window */
+@media screen and (min-width: 100vw) and (min-height: 100vh) {
+    .window {
+        border-radius: 0; /* Remove border radius for fullscreen */
+    }
+}
+
+/* Better solution - use a class-based approach */
+.window.maximized {
+    border-radius: 0;
+}
+
+.window.maximized .window-controls{
+    position: absolute;
+    right: 0.5%; /* Adjust for fullscreen */
+    display: flex;
+    gap: 4px;
+    height: 42px;
+    width: 130px;
+}
+
+.window.maximized .close{
+    position: absolute;
+    left: 90px;
+    top: 5px;
+    background-color: transparent;
+}
+
+.window.maximized .maximize{
+    position: absolute;
+    left: 58px;
+    top: 5px;
+    background-color: transparent;
+}
+
+.window.maximized .minimize{
+    position: absolute;
+    left: 26px;
+    top: 5px;
+    background-color: transparent;
+}
+
+.window.maximized .toolbar-button {
+    position: absolute;
+    top: 50px; /* Fixed pixel value for fullscreen */
+    background: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.window.maximized .address-bar {
+    position: absolute;
+    top: 50px;
+    left: 250px; /* Fixed pixel position for fullscreen */
+    width: calc(100% - 400px); /* Calculate width based on screen */
+    background: rgb(82, 80, 80);
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.window.maximized .backs{
+    left: 20px;
+}
+.window.maximized .forwards{
+    left: 100px;
+}
+.window.maximized .ups{
+    left: 190px;
+}
+.window.maximized .searchs{
+    right: 20px; /* Position from right edge */
+    left: auto;
+}
+        .window.maximized .close:hover{
+    background-color: red;
+}
+
+.window.maximized .maximize:hover{
+    background-color: rgb(62, 60, 60);
+}
+
+.window.maximized .minimize:hover{
+    background-color: rgb(62, 60, 60);
+}
+
+.window.maximized .toolbar-button:hover {
+    background: rgb(99, 97, 97);
+}
+
+.window.maximized .drive-item:hover {
+    background: rgb(62, 60, 60);
+}
+
+.window.maximized .window-title {
+    font-size: 18px; /* Increased from 14px */
+}
+
+.window.maximized .toolbar-button {
+    font-size: 14px; /* Increased from 12px */
+}
+
+.window.maximized .address-bar {
+    font-size: 14px; /* Increased from 12px */
+}
+
+.window.maximized .section-title {
+    font-size: 20px; /* Increased from 16px */
+}
+
+.window.maximized .drive-name {
+    font-size: 16px; /* Add explicit size */
+}
+
+.window.maximized .drive-details {
+    font-size: 14px; /* Increased from 12px */
+}
+
+.window.maximized .window-control {
+    font-size: 28px; /* Increased from 25px */
+}
+
+

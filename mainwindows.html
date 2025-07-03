@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebX OS</title>
+  <link rel="stylesheet" href="css/window.css">
+  <link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/thispc.css">
+  
+</head>
+<body>
+
+
+
+
+
+
+
+  
+<div class="context-menu" id="menu">
+  <ul>
+    <li onclick="location.reload()">Refresh</li>
+    <li onclick="addNewItem()">Create New Text File</li>
+  </ul>
+</div>
+
+
+
+  <div class="gridcon">
+    <!-- <button onclick="addNewItem()" style="position: absolute; top: 0%;">Add Item</button> -->
+<div class="grid-container" id="gridContainer"></div>
+
+    </div>
+    <!-- <button onclick="addNewItem()" style="position: absolute; top: 0%;">Add Item</button> -->
+  <div class="Taskbar">
+    <div class="box Weather">
+<img src="assets/img/appicons/weathericon.png" alt="Weather Icon" class="wicon">
+<p class="wtext">Partly Cloudy</p>
+<p class="wtemp">29°C</p>
+
+
+    </div>
+    <div class="box Start" style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/starts.png" alt="Start Icon" class="starticon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>Start</p>
+        
+      </div>
+    </div>
+    <div class="box search" style="display: flex; align-items: center; ">
+      <img src="assets/img/wb icons/search.png" alt="Search Icon" class="searchicon" style="left: 10px;
+      position: absolute;
+      height: 30px; width: 30px;">
+      <input type="text" class="searchbar" placeholder="Search" style="margin-left: 50px; height: 30px; width: 220px; position: absolute; background-color: transparent; border: none;  font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> 
+
+    </div>
+    <div class="box fileexp" style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/file exp.png" alt="File Explorer Icon" class="fileexpicon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>File Explorer</p>
+        
+      </div>
+    </div>
+    <div class="box store"style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/store.png" alt="Store Icon" class="storeicon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>Microsoft Store</p>
+        
+      </div>
+    </div>
+    <div class="box whatsapp"style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/whatsapp.png" alt="WhatsApp Icon" class="whatsappicon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>Whatsapp</p>
+        
+      </div>
+    </div>
+    <div class="box chrome"style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/chrome.png" alt="Chrome Icon" class="chromeicon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>Chrome</p>
+        
+      </div>
+    </div>
+    <div class="box vscode"style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/vscode.png" alt="VSCode Icon" class="vscodeicon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>VScode</p>
+        
+      </div>
+    </div>
+    <div class="box Musicplayer"style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/appicons/musicplayer.png" alt="Music Player Icon" class="musicplayericon" style="height: 40px; width: 40px;">
+      <div class="iconinfo">
+        <p>Music Player</p>
+        
+      </div>
+    </div>
+    <div class="box hiddenicons" style="display: flex; align-items: center; justify-content: center;">
+      <img src="assets/img/wb icons/upscroll.png" alt="Up Scroll Icon" class="upscrollicon" style="height: 30px; width: 30px;">
+       <div class="iconinfo">
+        <p>Show hidden icons</p>
+        
+      </div>
+    </div>
+    <div class="box lang" style="display: flex; align-items: center; justify-content: center; color: white;flex-direction: column;">
+      <div class="iconinfo">
+        <p>English(India)</p>
+        <p>To switch input methods, press windows key+space.</p>
+      </div>
+      <p >ENG</p>
+      <p >IN</p>
+    </div>
+    <div class="box acc" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; ">
+      <div class="wifiicon">
+      <img src="assets/img/wb icons/wifi.png" alt="WiFi Icon"  style="height: 22px; width: 22px;">
+    <div class="iconinfo">
+      <p>No internet access</p>
+    </div>
+    </div>
+      <div class="soundicon">
+      <img src="assets/img/wb icons/sound.png" alt="Sound Icon"  style="height: 22px; width: 22px;">
+    <div class="iconinfo">
+      <p>Speaker(Realtek(R) Audio):54%</p>
+    </div>
+    </div>
+      <div class="batteryicon">
+      <img src="assets/img/wb icons/battery.png" alt="Battery Icon"  style="height: 22px; width: 22px;">
+    <div class="iconinfo">
+      <p>Battery status: 78% remainings</p>
+    </div>
+    </div>
+      
+    </div>
+    <div class="box Timeanddate" style="color: white;position: absolute;
+    ">
+      <p class="time" style="right: 4px;top:2px; position: absolute;">12:00</p>
+      <p class="date" style="right: 4px; position: absolute;top: 25px;">28-06-2025</p>
+      <div class="iconinfo">
+        <p>28 June 2025</p>
+        <p>Saturday 20:08</p>
+      </div>
+    </div>
+
+
+    </div>
+    <div class="startscreen" >
+
+      
+        <p style="position: absolute; top: 14%; left: 10%;color: white; font-size: 20px;">Pinned</p>
+        <div class="alls" style="height: 24px; width: 50px; background-color: rgba(255, 255, 255, 0.2); position: absolute; top: 14.5%; left: 85%;border-radius: 6px;">
+          <p style="color: beige; font-size: 15px; position: absolute; left: 8px; top: 1px;">All</p>
+          <img src="assets/img/wb icons/arrright.png"style="position: absolute; bottom: 0; right: 0px;" >
+
+        </div>
+      <div class="inputbox" >
+        <img src="assets/img/wb icons/search.png" style="height: 30px; width: 30px; position: absolute; left: 14px; top: 5px;">
+        <input type="text" class="inputsearch" placeholder="Search for app,settings and documents">
+      </div>
+
+      <div class="pinnedapps" style="display: flex;flex-wrap:wrap;align-items:normal;">
+        <div class="edges" >
+<img src="assets/img/appicons/edge.png"> <p>Edge</p>
+        </div>
+         <div class="edges" >
+<img src="assets/img/appicons/Excel.png"> <p>Excel</p>
+         </div>
+          <div class="edges" >
+<img src="assets/img/appicons/ppt.png"> <p>Powerpoint</p>
+          </div>
+           <div class="edges" >
+<img src="assets/img/appicons/outlook.png"style="height: 65px; width: 65px;"> <p>Outlook</p>
+           </div>
+            <div class="edges" >
+<img src="assets/img/appicons/store.png"> <p>Store</p>
+            </div>
+             <div class="edges" >
+<img src="assets/img/appicons/photo.png"> <p>Photo</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/XBOX.png"> <p>Xbox</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/card-game.png"> <p>Solitaire</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/whatsapp.png"> <p>WhatsApp</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/todo.png"> <p>To Do</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/Access.png"> <p>Microsoft Access</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/linkedin.png"> <p>Linkedin</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/setting.png"> <p>Settings</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/mcafee.png"> <p>Mcafee</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/microsoft-teams.png"> <p>Teams</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/nvidia.png"> <p>Nvidia</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/vscode.png"> <p>VSCode</p>
+             </div>
+             <div class="edges" >
+<img src="assets/img/appicons/utorrent.png"> <p>uTorrent</p>
+             </div>
+          
+
+        </div>
+<div class="reccapp">
+  <p style="position: absolute; top: 10%; left: 5%;color: white; font-size: 20px;">Recommended</p>
+        <div class="alls" style="height: 24px; width: 65px; background-color: rgba(255, 255, 255, 0.2); position: absolute; top: 10%; left: 85%;border-radius: 6px;">
+          <p style="color: beige; font-size: 15px; position: absolute; left: 8px; top: 1px;">More</p>
+          <img src="assets/img/wb icons/arrright.png"style="position: absolute; bottom: 0; right: 0px;" >
+
+        </div>
+        <div class="recapps" style="display: flex;flex-wrap:wrap;align-items:center; ">
+          <div class="recced">
+            <div><img src="assets/img/appicons/vscode.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>      VSCode</p>
+            <p style="font-size: 12px; color: white;">         Frequently Used</p></div>
+          </div>
+          <div class="recced">
+<div><img src="assets/img/appicons/minecraft.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>      Minecraft</p>
+            <p style="font-size: 12px; color: white;"> 1hr ago</p></div>
+          </div>
+          <div class="recced">
+<div><img src="assets/img/appicons/text.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>      Project Ideas</p>
+            <p style="font-size: 12px; color: white;">         2hr ago</p></div>
+          </div>
+          <div class="recced">
+<div><img src="assets/img/appicons/folder.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>      Assets</p>
+            <p style="font-size: 12px; color: white;">         2hr ago</p></div>
+          
+          </div>
+          <div class="recced">
+<div><img src="assets/img/appicons/musicplayer.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>      Music Player</p>
+            <p style="font-size: 12px; color: white;">         Frequently Used</p></div>
+          
+          </div>
+          <div class="recced">
+<div><img src="assets/img/appicons/text.png" style="height: 65px; width: 65px;"></div>
+           <div style="margin-left: 5px;">
+            <p>  To do List</p>
+            <p style="font-size: 12px; color: white;">         1hr ago</p></div>
+          
+          </div>
+          
+
+          </div>
+          
+
+</div>
+<div class="powerscreen">
+  <div class="poweroption">
+  <img src="assets/img/wb icons/lock.png" style="height: 30px; width: 30px;"> <p>Lock</p>
+  </div>
+  <div class="poweroption">
+  <img src="assets/img/wb icons/moon.png" style="height: 30px; width: 30px;"> <p>Sleep</p>
+  </div>
+  <div class="poweroption">
+  <img src="assets/img/wb icons/restart.png" style="height: 30px; width: 30px;"> <p>Restart</p>
+  </div>
+  <div class="poweroption">
+  <img src="assets/img/wb icons/poweroff2.png" style="height: 30px; width: 30px;"> <p>Power Off</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+      <div class="powerbar">
+        <div class="powerbtn">
+<img src="assets/img/wb icons/poweroff2.png"style="height: 30px; width: 30px;">
+<div class="iconinfos" >
+  <p>  Power  </p>
+</div>
+
+        </div>
+        <div class="namecard">
+          <div class="nametag">
+          <img src="assets/img/user.png" style="height: 40px; width: 40px; border-radius: 1.5rem; left: 10px; position: absolute  ;">
+          <p style="color: white; font-size: 20px; position: absolute; left: 60px; font-size: 17px;">Shravan Mane</p>
+
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="accscreen">
+      <div class="chargea">
+        <img src="assets/img/wb icons/battery.png" style="position: absolute; bottom: 3.5%; left: 8%;z-index: 2;"><p style="bottom: 4%; left: 15%; position: absolute;z-index: 2; font-size: 15px;color: #ffffff;">78%</p>
+      </div>
+      <div class="settinga">
+        <img src="assets/img/wb icons/setting.png" style="right: 8%;bottom: 3.5%; position: absolute; z-index: 2;">
+      </div>
+      <div class="acctext">
+        <div class="wifitext">
+          <p style="color: beige;position: absolute;left: 50px;top: 105px;">One Plus 2T</p></div>
+        <div class="bluetext"><p style="color: beige;
+        position: absolute;left: 197px;top: 105px;">Buds 3 pro</p></div>
+        <div class="airtext"><p style="color: beige;position: absolute;left: 324px;top: 105px;">Airplane mode</p></div>
+        <div class="energytext"><p style="color: beige;position: absolute;left: 50px;top: 225px;">Energy saver</p></div>
+        <div class="nighttext"><p style="color: beige;position: absolute;left: 197px;top: 225px;">Night light</p></div>
+        <div class="accesstext"><p style="color: beige;position: absolute;left: 334px;top: 225px;">Accessibility</p></div>
+
+      </div>
+      <div class="setta" style="position: absolute; top: 75%;
+      left: 86%; .setta:hover{background-color: rgba(255, 255, 255, 0.2); transform: scale(1.1); cursor: pointer; }">
+        <img src="assets/img/wb icons/sett.png" style="height: 23px;width: 23px;">
+        <img src="assets/img/wb icons/arrright.png" style="height: 25px;width: 25px;color: wheat;">
+      </div>
+      <div class="abrighta">
+          <img src="assets/img/wb icons/day.png"style="height: 25px;width: 25px;">
+          </div>
+          <div class="avolumea">
+          <img src="assets/img/wb icons/sound.png"style="height: 25px;width: 25px;">
+          </div>
+      <div class="accbox">
+        <div class="abox awifi" style="display: flex;justify-content: center;align-items: center;">
+          <div class="awifia">
+          <img src="assets/img/wb icons/wifi.png" style="height: 20px;width: 20px;"></div>
+          <div class="aarra">
+          <img src="assets/img/wb icons/arrforward.png"style="height: 25px;width: 25px;">
+          </div>
+        </div>
+        <div class="abox abluethooth" style="display: flex;justify-content: center;align-items: center;">
+          <div class="abluea">
+          <img src="assets/img/wb icons/bluethooth.png" style="height: 23px;width: 23px;"></div>
+          <div class="aarrb">
+          <img src="assets/img/wb icons/arrforward.png"style="height: 25px;width: 25px;">
+          </div>
+
+
+        </div>
+        <div class="abox aairplane"style="display: flex;justify-content: center;align-items: center;">
+<div class="aaira">
+  <img src="assets/img/wb icons/airplane.png" style="height: 23px;width: 23px;">
+</div>
+
+        </div>
+        <div class="abox aenergysaver"style="display: flex;justify-content: center;align-items: center;">
+          <div class="aenergya">
+            <img src="assets/img/wb icons/energysaver.png" style="height: 23px;width: 23px;">
+          </div>
+        </div>
+        <div class="abox andmode"style="display: flex;justify-content: center;align-items: center;">
+          <div class="amodea">
+             <img src="assets/img/wb icons/night.png" style="height: 23px;width: 23px;">
+          </div>
+        </div>
+        <div class="abox aaccessiblity"style="display: flex;justify-content: center;align-items: center;">
+          <div class="aaccea">
+            <img src="assets/img/wb icons/acce.png" style="height: 23px;width: 23px;">
+          </div>
+        </div>
+        
+      </div>
+      <div class="asetting">
+
+
+      </div>
+<div class="aadjust">
+  <div class="volume-container">
+  <input type="range" min="0" max="100" value="100" class="volume-slider">
+  <span class="volume-tooltip">100</span>
+</div>
+<div class="brightness-container">
+  <input type="range" min="0" max="100" value="100" class="brightness-slider">
+  <span class="brightness-tooltip">100</span>
+</div>
+
+</div>
+
+    </div>
+    <div class="hiddeniconscreen">
+      
+      <img src="assets/img/appicons/nvidia.png" class="iconhover"style="height: 25px; width: 25; ">
+      <img src="assets/img/appicons/microsoft-teams.png" class="iconhover"style="height: 25px; width: 25;">
+      <img src="assets/img/appicons/qbittorrent.png" class="iconhover"style="height: 25px; width: 25;">
+      <img src="assets/img/appicons/utorrent.png" class="iconhover"style="height: 25px; width: 25;">
+      <img src="assets/img/appicons/bluetooth.png" class="iconhover"style="height: 25px; width: 25;">
+      
+    </div>
+<div class="window" id="thispc-window">
+  <div class="window-header">
+    <div class="window-title">
+      <span>   💻</span>
+      <span style="color: white;">This PC</span>
+    </div>
+    <div class="window-controls">
+      <button class="window-control minimize">−</button>
+      <button class="window-control maximize">□</button>
+      <button class="window-control close">×</button>
+    </div>
+  </div>
+  <div class="window-toolbar">
+            <button class="toolbar-button backs">← Back</button>
+            <button class="toolbar-button forwards">→ Forward</button>
+            <button class="toolbar-button ups">↑ Up</button>
+            <input type="text" class="address-bar" value="This PC" readonly>
+            <button class="toolbar-button searchs">🔍 Search</button>
+        </div>
+        <div class="window-content">
+          <div class="drives-section">
+                <div class="section-title" style="color: wheat;">Devices and drives</div>
+                <div class="drives-grid">
+                    <div class="drive-item">
+                        <div class="drive-icon">💽</div>
+                        <div class="drive-info">
+                            <div class="drive-name">Local Disk (C:)</div>
+                            <div class="drive-details">465 GB free of 931 GB</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="drive-item">
+                        <div class="drive-icon">💿</div>
+                        <div class="drive-info">
+                            <div class="drive-name">Local Disk (D:)</div>
+                            <div class="drive-details">128 GB free of 256 GB</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+</div>
+    
+
+
+    
+    <script src="js/desktop.js"></script>
+    <script src="js/grid.js"></script>
+    <script src="js/apps/Thispc.js"></script>
+</body>
+</html>
